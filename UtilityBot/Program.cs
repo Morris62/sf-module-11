@@ -2,14 +2,12 @@
 using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
 
-namespace VoiceTextBot;
+namespace UtilityBot;
 
 internal class Program
 {
     private static async Task Main()
     {
-        //Console.OutputEncoding = Encoding.Unicode;
-
         var host = new HostBuilder()
             .ConfigureServices((hostContext, services) => ConfigureServices(services))
             .UseConsoleLifetime()
