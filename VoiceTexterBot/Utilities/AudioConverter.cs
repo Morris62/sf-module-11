@@ -1,7 +1,7 @@
 using FFMpegCore;
-using VoiceTextBot.Extentions;
+using VoiceTexterBot.Extentions;
 
-namespace VoiceTextBot.Utilities;
+namespace VoiceTexterBot.Utilities;
 
 public static class AudioConverter
 {

@@ -1,4 +1,4 @@
-namespace VoiceTextBot.Extentions;
+namespace VoiceTexterBot.Extentions;
 
 public class StringExtention
 {

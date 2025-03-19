@@ -1,9 +1,9 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using VoiceTextBot.Services;
+using VoiceTexterBot.Services;
 
-namespace VoiceTextBot.Controllers;
+namespace VoiceTexterBot.Controllers;
 
 public class InlineKeyboardController(ITelegramBotClient botClient, IStorage memoryStorage)
 {

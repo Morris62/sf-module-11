@@ -1,6 +1,6 @@
-using VoiceTextBot.Models;
+using UtilityBot.Models;
 
-namespace VoiceTextBot.Services;
+namespace UtilityBot.Services;
 
 public interface IStorage
 {

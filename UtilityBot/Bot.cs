@@ -4,16 +4,19 @@ using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using UtilityBot.Controllers;
 
 namespace UtilityBot;
 
-public class Bot(ITelegramBotClient telegramBotClient) : BackgroundService
+public class Bot(
+    ITelegramBotClient telegramBotClient,
+    DefaultMessageController defaultMessageController,
+    InlineKeyboardController inlineKeyboardController,
+    TextMessageController textMessageController) : BackgroundService
 {
-    private readonly ITelegramBotClient _telegramBotClient = telegramBotClient;
-
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _telegramBotClient.StartReceiving(
+        telegramBotClient.StartReceiving(
             HandleUpdateAsync,
             HandleErrorAsync,
             new ReceiverOptions(),
@@ -27,17 +30,24 @@ public class Bot(ITelegramBotClient telegramBotClient) : BackgroundService
     private async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update,
         CancellationToken cancellationToken)
     {
-        if (update.Type == UpdateType.CallbackQuery)
+        switch (update.Type)
         {
-            await botClient.SendMessage(update.Message.Chat.Id, "Вы нажали кнопку",
-                cancellationToken: cancellationToken);
-            return;
-        }
+            case UpdateType.CallbackQuery:
+                await inlineKeyboardController.Handle(update.CallbackQuery, cancellationToken);
+                break;
+            case UpdateType.Message:
+                switch (update.Message?.Type)
+                {
+                    case MessageType.Text:
+                        await textMessageController.Handle(update.Message, cancellationToken);
+                        break;
+                    default:
+                        await defaultMessageController.Handle(update.Message, cancellationToken);
+                        break;
+                }
 
-        if (update.Type == UpdateType.Message)
-            await botClient.SendMessage(update.Message.Chat.Id,
-                $"Длина сообщения {update.Message.Text?.Length} символов",
-                cancellationToken: cancellationToken);
+                break;
+        }
     }
 
     private Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception,

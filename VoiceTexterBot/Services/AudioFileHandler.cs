@@ -1,8 +1,8 @@
 using Telegram.Bot;
-using VoiceTextBot.Configuration;
-using VoiceTextBot.Utilities;
+using VoiceTexterBot.Configuration;
+using VoiceTexterBot.Utilities;
 
-namespace VoiceTextBot.Services;
+namespace VoiceTexterBot.Services;
 
 public class AudioFileHandler(ITelegramBotClient botClient, AppSettings appSettings) : IFileHandler
 {
@@ -34,11 +34,9 @@ public class AudioFileHandler(ITelegramBotClient botClient, AppSettings appSetti
         AudioConverter.TryConvert(inputAudioPath, outputAudioPath);
         Console.WriteLine("Файл конвертирован");
 
-
         Console.WriteLine("Начинаем распознование");
         var speechText = SpeechDetector.Detect(outputAudioPath, 48000, languageCode);
         Console.WriteLine("Файл распознан");
-
 
         return speechText;
     }

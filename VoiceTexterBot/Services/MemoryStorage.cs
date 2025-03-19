@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
-using VoiceTextBot.Models;
+using VoiceTexterBot.Models;
 
-namespace VoiceTextBot.Services;
+namespace VoiceTexterBot.Services;
 
 public class MemoryStorage : IStorage
 {

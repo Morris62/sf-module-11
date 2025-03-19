@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceTextBot", "VoiceTextBot\VoiceTextBot.csproj", "{B480C17D-1325-448F-94F8-7F5D501540CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceTexterBot", "VoiceTexterBot\VoiceTexterBot.csproj", "{B480C17D-1325-448F-94F8-7F5D501540CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityBot", "UtilityBot\UtilityBot.csproj", "{1CA980C6-8664-4FCD-B84A-F9809F7B9464}"
 EndProject

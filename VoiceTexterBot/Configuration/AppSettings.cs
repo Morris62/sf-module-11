@@ -1,4 +1,4 @@
-namespace VoiceTextBot.Configuration;
+namespace VoiceTexterBot.Configuration;
 
 public class AppSettings
 {

@@ -1,9 +1,9 @@
 using System.Text;
 using Newtonsoft.Json.Linq;
-using VoiceTextBot.Extentions;
+using VoiceTexterBot.Extentions;
 using Vosk;
 
-namespace VoiceTextBot.Utilities;
+namespace VoiceTexterBot.Utilities;
 
 public static class SpeechDetector
 {

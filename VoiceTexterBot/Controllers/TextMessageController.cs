@@ -3,7 +3,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 
-namespace VoiceTextBot.Controllers;
+namespace VoiceTexterBot.Controllers;
 
 public class TextMessageController(ITelegramBotClient botClient)
 {

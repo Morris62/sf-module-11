@@ -1,4 +1,4 @@
-namespace VoiceTextBot.Models;
+namespace VoiceTexterBot.Models;
 
 public class Session
 {

@@ -1,16 +1,17 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
-using VoiceTextBot.Configuration;
-using VoiceTextBot.Controllers;
-using VoiceTextBot.Services;
+using VoiceTexterBot.Configuration;
+using VoiceTexterBot.Controllers;
+using VoiceTexterBot.Services;
 
-namespace VoiceTextBot;
+namespace VoiceTexterBot;
 
 internal class Program
 {
     private static async Task Main()
     {
+        // в МакОСи символы в терминале отображаются некорректно
         //Console.OutputEncoding = Encoding.Unicode;
 
         var host = new HostBuilder()
@@ -47,7 +48,7 @@ internal class Program
             AudioFileName = "audio",
             InputAudioFormat = "ogg",
             OutputAudioFormat = "wav",
-            InputBitrate = 48
+            InputBitrate = 48000
         };
     }
 }

@@ -1,4 +1,4 @@
-namespace VoiceTextBot.Services;
+namespace VoiceTexterBot.Services;
 
 public interface IFileHandler
 {

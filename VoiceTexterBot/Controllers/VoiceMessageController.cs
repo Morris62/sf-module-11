@@ -1,9 +1,9 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using VoiceTextBot.Configuration;
-using VoiceTextBot.Services;
+using VoiceTexterBot.Configuration;
+using VoiceTexterBot.Services;
 
-namespace VoiceTextBot.Controllers;
+namespace VoiceTexterBot.Controllers;
 
 public class VoiceMessageController(
     ITelegramBotClient botClient,
